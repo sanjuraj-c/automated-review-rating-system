@@ -7,28 +7,63 @@ This project aims to build an automated review rating system that analyzes custo
 By processing and analyzing review text using natural language processing techniques, this system helps businesses quickly identify the sentiment of customer feedback, monitor product performance, and make data-driven decisions without manual intervention.
 
 # Dataset description
-This project combines multiple publicly available review datasets collected in two phases. Each dataset contains user-generated product reviews along with corresponding rating scores. Below is a brief description of the datasets used:
-Phase 1 Datasets
-1.E-commerce Product Reviews (Electronics)
-Contains reviews of electronic products including features like review text, rating, review title, date, and verification status. After preprocessing, only the review text and rating columns were retained.
+To build the automated review rating system, data was gathered in two phases from various sources containing customer reviews along with corresponding ratings. The objective was to retain only the review text and rating fields after cleaning and preprocessing.
 
-2.Amazon General Product Reviews
-A larger collection of various product reviews. The dataset included review headers, review body, and rating fields. Null and unnecessary fields were removed before combining.
+Phase 1 Datasets:
+1. Amazon Echo Product Reviews
 
-3.ChatGPT User Reviews
-A small but clean set of reviews with rating and review text, requiring minimal cleaning. All columns were retained after removing irrelevant ones.
+-Columns included metadata such as page URL, title, review color, review date, and more.
 
-4.Amazon Product Reviews
-Includes detailed Amazon reviews with fields like reviewer name, helpful votes, review summary, and rating. Only the core fields relevant to review text and rating were used after preprocessing.
+-After inspection, unnecessary and mostly null-filled columns were dropped.
 
-After cleaning, these were merged together into a single combined dataset called Cleaned Dataset 1.
+-Only the review text and rating columns were retained.
 
-Phase 2 Datasets
-1.Cosmetic Product Reviews (MakeupAlley)
-This dataset contains reviews of cosmetic products with corresponding ratings and product names. Cleaned to retain only the review text and rating.
+-Null values and duplicates were removed.
 
-2.Women’s Clothing E-commerce Reviews
-Contains user feedback on women’s clothing products, including customer age, department, and detailed reviews. After removing null values and duplicates, only essential fields like review text and rating were kept.
+2. Amazon Product Reviews
 
-These were merged into Cleaned Dataset 2, and then both cleaned datasets from phase 1 and phase 2 were finally combined to form the complete dataset used for training and evaluation.
+-Contained product categories and user review details.
 
+-Similar cleaning steps were applied: dropped unneeded columns and removed rows with missing review text.
+
+-No duplicates were found.
+
+3. ChatGPT Product Reviews
+
+-A small set of reviews with rating and review date.
+
+-No missing or duplicate values were present.
+
+-Cleaned to keep only necessary fields.
+
+4. Amazon General Reviews
+
+-Included fields like reviewer ID, helpfulness votes, review summary, and time.
+
+-Columns with missing or irrelevant data were removed.
+
+-Ensured that all reviews were valid and unique.
+
+➡These cleaned datasets were combined to form Cleaned Dataset 1.
+
+
+Phase 2 Datasets:
+1. MakeupAlley Cosmetic Product Reviews
+
+-Each entry included product review, rating, and date.
+
+-All entries were clean with no missing or duplicate records.
+
+-Retained only the review text and rating columns.
+
+2. Women’s Clothing E-commerce Reviews
+
+-Included customer demographics and feedback information.
+
+-After cleaning, only the review text and rating were kept.
+
+-Null values and a single duplicate were removed.
+
+➡These cleaned datasets were combined to form Cleaned Dataset 2.
+
+Finally, both Cleaned Dataset 1 and Cleaned Dataset 2 were merged into a single dataset used for model training. Only reviews with meaningful content and valid rating labels were preserved.
