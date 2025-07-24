@@ -13,35 +13,26 @@ Phase 1 Datasets:
 1. Amazon Echo Product Reviews
 
 -Columns included metadata such as page URL, title, review color, review date, and more.
-
 -After inspection, unnecessary and mostly null-filled columns were dropped.
-
 -Only the review text and rating columns were retained.
-
 -Null values and duplicates were removed.
 
 2. Amazon Product Reviews
 
 -Contained product categories and user review details.
-
 -Similar cleaning steps were applied: dropped unneeded columns and removed rows with missing review text.
-
 -No duplicates were found.
 
 3. ChatGPT Product Reviews
 
 -A small set of reviews with rating and review date.
-
 -No missing or duplicate values were present.
-
 -Cleaned to keep only necessary fields.
 
 4. Amazon General Reviews
 
 -Included fields like reviewer ID, helpfulness votes, review summary, and time.
-
 -Columns with missing or irrelevant data were removed.
-
 -Ensured that all reviews were valid and unique.
 
 These cleaned datasets were combined to form Cleaned Dataset 1.
@@ -51,17 +42,13 @@ Phase 2 Datasets:
 1. MakeupAlley Cosmetic Product Reviews
 
 -Each entry included product review, rating, and date.
-
 -All entries were clean with no missing or duplicate records.
-
 -Retained only the review text and rating columns.
 
 2. Women’s Clothing E-commerce Reviews
 
 -Included customer demographics and feedback information.
-
 -After cleaning, only the review text and rating were kept.
-
 -Null values and a single duplicate were removed.
 
 These cleaned datasets were combined to form Cleaned Dataset 2.
@@ -79,27 +66,22 @@ Each dataset was loaded using pandas and inspected using functions like .head(),
 2. Handling Missing Values
 
 -Columns that had a large number of missing values or were irrelevant to the analysis were dropped.
-
 -Rows with missing entries in the review text or rating columns were removed to maintain data quality.
 
 3. Dropping Irrelevant Columns
 
 -Only the review text and rating columns were retained from each dataset.
-
 -Other metadata like dates, user details, product configuration, etc., were considered unnecessary and discarded.
 
 4. Duplicate Removal
 
 -All datasets were checked for duplicate rows using .duplicated().
-
 -Any duplicate records found (if any) were removed to avoid data redundancy.
 
 5. Data Merging
 
 -Cleaned datasets from Phase 1 were combined into a single dataset.
-
 -Similarly, Phase 2 datasets were cleaned and merged.
-
 -Finally, both cleaned datasets were concatenated to form one unified dataset.
 
 Review Text Processing
@@ -119,23 +101,17 @@ Review Text Processing
 9. Filtering Out Short and Long Reviews
 
 -Reviews with fewer than 3 words or more than 100 words were removed to retain only meaningful and focused feedback.
-
 -In imbalanced data:
-
 Reviews < 3 words: 603
-
 Reviews > 100 words: 31
 
 -In balanced data:
-
 Reviews < 3 words: 1014
-
 Reviews > 100 words: 47
 
 10. Conflicting Review Removal
 
 -Reviews that did not align with their ratings (e.g., positive text with a negative rating or vice versa) were manually identified and removed.
-
 -A total of 2,655 conflicting reviews were filtered out from the final dataset to enhance training clarity and reduce label noise.
 
 These preprocessing steps ensured a high-quality, cleaned dataset .
@@ -146,19 +122,16 @@ To better understand the data and guide modeling decisions, several visualizatio
 1. Histogram Plots of Rating Distributions
 
 -Visualized how ratings were distributed across the dataset.
-
 -Helped identify class imbalances (e.g., more 5-star reviews than 1-star).
 
 2. Countplots (Per Rating Class)
 
 -Displayed the number of reviews for each rating class using count plots.
-
 -Useful for comparing rating frequency across different datasets.
 
 3. Pie Charts of Overall Sentiment Distribution
 
 -Ratings were grouped into broader sentiment categories like Positive, Neutral, and Negative.
-
 -Pie charts helped visualize the proportion of each sentiment group in the dataset.
 
 
