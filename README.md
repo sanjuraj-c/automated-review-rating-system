@@ -102,6 +102,44 @@ Each dataset was loaded using pandas and inspected using functions like .head(),
 
 -Finally, both cleaned datasets were concatenated to form one unified dataset.
 
+Review Text Processing
+
+6. Emoji and Special Character Removal
+
+-Emojis, symbols, and special characters were removed using regular expressions to focus only on meaningful textual content.
+
+7. Stop Word Removal
+
+-Common stop words (e.g., “the”, “is”, “and”) were removed using NLTK to reduce noise and retain only informative words.
+
+8. Lemmatization
+
+-Words were reduced to their root forms (e.g., “running” → “run”) using WordNetLemmatizer, improving consistency across similar word forms.
+
+9. Filtering Out Short and Long Reviews
+
+-Reviews with fewer than 3 words or more than 100 words were removed to retain only meaningful and focused feedback.
+
+-In imbalanced data:
+
+Reviews < 3 words: 603
+
+Reviews > 100 words: 31
+
+-In balanced data:
+
+Reviews < 3 words: 1014
+
+Reviews > 100 words: 47
+
+10. Conflicting Review Removal
+
+-Reviews that did not align with their ratings (e.g., positive text with a negative rating or vice versa) were manually identified and removed.
+
+-A total of 2,655 conflicting reviews were filtered out from the final dataset to enhance training clarity and reduce label noise.
+
+These preprocessing steps ensured a high-quality, cleaned dataset .
+
 # Visualizations Used
 To better understand the data and guide modeling decisions, several visualizations were created during the exploratory data analysis (EDA) phase:
 
@@ -131,6 +169,10 @@ Before and After Cleaning/Balancing Comparisons
 
 # Balancing Strategy
 To ensure that the model does not become biased toward any specific rating class, a balancing strategy was applied. After combining and cleaning all the datasets, it was observed that the number of reviews across different rating levels (from 1 to 5) was slightly imbalanced. To fix this, each rating class was limited to 2700 samples. This was done by under-sampling the classes with more than 2700 reviews. As a result, the final dataset had an equal number of 2700 reviews for each rating class, helping the model learn fairly from all categories. The data was also shuffled to maintain randomness before training.
+
+
+# Imbalancing Strategy
+Before applying the imbalancing strategy, the cleaned combined dataset had the following rating distribution: 7,578 samples for rating 1, 3,274 for rating 2, 7,732 for rating 3, 16,930 for rating 4, and 46,124 for rating 5. To simulate a more realistic, real-world review distribution, we created an imbalanced dataset by excluding the samples used in the balanced dataset and then sampling the remaining data based on specific proportions. The new imbalanced dataset included 10% of samples for rating 1, 15% for rating 2, 25% for rating 3, 30% for rating 4, and 20% for rating 5. This helped in evaluating how the models perform under skewed data conditions.
 
 
 # Train-Test Split Methodology
