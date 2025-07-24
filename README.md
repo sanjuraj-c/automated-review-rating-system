@@ -101,3 +101,31 @@ Each dataset was loaded using pandas and inspected using functions like .head(),
 -Similarly, Phase 2 datasets were cleaned and merged.
 
 -Finally, both cleaned datasets were concatenated to form one unified dataset.
+
+# Visualizations Used
+To better understand the data and guide modeling decisions, several visualizations were created during the exploratory data analysis (EDA) phase:
+
+1. Histogram Plots of Rating Distributions
+
+-Visualized how ratings were distributed across the dataset.
+
+-Helped identify class imbalances (e.g., more 5-star reviews than 1-star).
+
+2. Countplots (Per Rating Class)
+
+-Displayed the number of reviews for each rating class using count plots.
+
+-Useful for comparing rating frequency across different datasets.
+
+3. Pie Charts of Overall Sentiment Distribution
+
+-Ratings were grouped into broader sentiment categories like Positive, Neutral, and Negative.
+
+-Pie charts helped visualize the proportion of each sentiment group in the dataset.
+
+
+Before and After Cleaning/Balancing Comparisons
+
+-Visualizations were also used to compare the dataset before and after cleaning and balancing. This helped in understanding how much the data was affected by preprocessing steps, especially in terms of class distribution. It clearly showed how the ratings became more evenly distributed after balancing, making the dataset suitable for training.
+
+
