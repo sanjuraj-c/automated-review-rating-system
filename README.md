@@ -44,7 +44,7 @@ Phase 1 Datasets:
 
 -Ensured that all reviews were valid and unique.
 
-➡These cleaned datasets were combined to form Cleaned Dataset 1.
+These cleaned datasets were combined to form Cleaned Dataset 1.
 
 
 Phase 2 Datasets:
@@ -64,6 +64,6 @@ Phase 2 Datasets:
 
 -Null values and a single duplicate were removed.
 
-➡These cleaned datasets were combined to form Cleaned Dataset 2.
+These cleaned datasets were combined to form Cleaned Dataset 2.
 
 Finally, both Cleaned Dataset 1 and Cleaned Dataset 2 were merged into a single dataset used for model training. Only reviews with meaningful content and valid rating labels were preserved.
