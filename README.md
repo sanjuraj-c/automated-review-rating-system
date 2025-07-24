@@ -129,3 +129,6 @@ Before and After Cleaning/Balancing Comparisons
 -Visualizations were also used to compare the dataset before and after cleaning and balancing. This helped in understanding how much the data was affected by preprocessing steps, especially in terms of class distribution. It clearly showed how the ratings became more evenly distributed after balancing, making the dataset suitable for training.
 
 
+# Balancing Strategy
+To ensure that the model does not become biased toward any specific rating class, a balancing strategy was applied. After combining and cleaning all the datasets, it was observed that the number of reviews across different rating levels (from 1 to 5) was slightly imbalanced. To fix this, each rating class was limited to 2700 samples. This was done by under-sampling the classes with more than 2700 reviews. As a result, the final dataset had an equal number of 2700 reviews for each rating class, helping the model learn fairly from all categories. The data was also shuffled to maintain randomness before training.
+
