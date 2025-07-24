@@ -132,3 +132,19 @@ Before and After Cleaning/Balancing Comparisons
 # Balancing Strategy
 To ensure that the model does not become biased toward any specific rating class, a balancing strategy was applied. After combining and cleaning all the datasets, it was observed that the number of reviews across different rating levels (from 1 to 5) was slightly imbalanced. To fix this, each rating class was limited to 2700 samples. This was done by under-sampling the classes with more than 2700 reviews. As a result, the final dataset had an equal number of 2700 reviews for each rating class, helping the model learn fairly from all categories. The data was also shuffled to maintain randomness before training.
 
+
+# Train-Test Split Methodology
+After cleaning, balancing, and shuffling the dataset, the next step was to split it into training and testing sets. An 80-20 split was used, where 80% of the data was used for training the model, and the remaining 20% was kept aside for testing. This ensures that the model learns from the majority of the data while still being evaluated on unseen data to assess its generalization performance. The split was done in a stratified manner to maintain the balanced class distribution across both sets.
+
+
+# Notes on Decisions Taken
+Several key preprocessing and modeling decisions were made during the development of this automated review rating system:
+
+-Lemmatization over Stemming:
+Lemmatization was preferred instead of stemming to ensure that the words are reduced to their proper base or dictionary form (e.g., “better” → “good”), preserving semantic meaning. Stemming, while faster, often produces non-meaningful root words (e.g., “running” → “run” vs. “runn”), which could negatively affect text understanding.
+
+-TF-IDF Vectorizer over Count Vectorizer:
+TF-IDF (Term Frequency-Inverse Document Frequency) was chosen to convert text data into numerical features. Unlike Count Vectorizer, TF-IDF not only considers how frequently a word appears but also penalizes common words across documents. This helps the model focus on more informative and distinctive words.
+
+-Class Balancing via Sampling:
+Since the original dataset was imbalanced across different rating categories, an equal number of reviews per class (2700) were sampled to ensure that the model does not become biased towards majority classes.
