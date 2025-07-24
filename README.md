@@ -67,3 +67,37 @@ Phase 2 Datasets:
 These cleaned datasets were combined to form Cleaned Dataset 2.
 
 Finally, both Cleaned Dataset 1 and Cleaned Dataset 2 were merged into a single dataset used for model training. Only reviews with meaningful content and valid rating labels were preserved.
+
+
+# Preprocessing Steps
+After collecting and cleaning the datasets, the following initial preprocessing steps were applied to prepare the review text and rating data for model training:
+
+1. Data Loading and Inspection
+
+Each dataset was loaded using pandas and inspected using functions like .head(), .tail(), .sample(), .shape, .columns, .info(), and .describe() to understand structure and content.
+
+2. Handling Missing Values
+
+-Columns that had a large number of missing values or were irrelevant to the analysis were dropped.
+
+-Rows with missing entries in the review text or rating columns were removed to maintain data quality.
+
+3. Dropping Irrelevant Columns
+
+-Only the review text and rating columns were retained from each dataset.
+
+-Other metadata like dates, user details, product configuration, etc., were considered unnecessary and discarded.
+
+4. Duplicate Removal
+
+-All datasets were checked for duplicate rows using .duplicated().
+
+-Any duplicate records found (if any) were removed to avoid data redundancy.
+
+5. Data Merging
+
+-Cleaned datasets from Phase 1 were combined into a single dataset.
+
+-Similarly, Phase 2 datasets were cleaned and merged.
+
+-Finally, both cleaned datasets were concatenated to form one unified dataset.
