@@ -1,4 +1,4 @@
-#📊 Automated Review Rating System
+#Automated Review Rating System
 
 📌 Overview
 The Automated Review Rating System predicts numerical ratings (e.g., 1–5 stars) for user reviews automatically.
