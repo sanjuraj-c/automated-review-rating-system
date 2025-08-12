@@ -1,4 +1,5 @@
 #📊 Automated Review Rating System
+
 📌 Overview
 The Automated Review Rating System predicts numerical ratings (e.g., 1–5 stars) for user reviews automatically.
 It leverages Natural Language Processing (NLP) and Machine Learning techniques to analyze the sentiment and meaning of reviews, providing consistent and unbiased rating predictions.
